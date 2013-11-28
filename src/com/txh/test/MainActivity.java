@@ -1,12 +1,17 @@
 package com.txh.test;
 
-import java.awt.Font;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import com.txh.javaUi.Button;
+import com.txh.javaUi.EditText;
+import com.txh.javaUi.Label;
 
 public class MainActivity extends JFrame{
 
@@ -15,7 +20,6 @@ public class MainActivity extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	static MainActivity main = new MainActivity();
-	private Font font = new Font("Default",Font.PLAIN,21);
 
 	/**
 	 * @param args
@@ -25,7 +29,7 @@ public class MainActivity extends JFrame{
 		
 		main.setTitle(constant.mainTitle);
 		main.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		main.setSize(320,320);
+		main.setSize(340,320);
 		main.setVisible(true);
 	}
 	
@@ -33,22 +37,27 @@ public class MainActivity extends JFrame{
 	 * Constructor , build interface .
 	 */
 	public MainActivity(){
-		setLayout(new GridLayout(4,1));
+		setLayout(new GridLayout(5,1));
 		
 		JButton  addButton = Button.createButton(constant.addFriend);
-		addButton.setFont(font);
 		add(addButton);
 		
-		JButton  viewButton = new JButton(constant.viewFriend);
-		viewButton.setFont(font);
+		JButton  viewButton = Button.createButton(constant.viewFriend);
 		add(viewButton);
 		
-		JButton  settingButton = new JButton(constant.setting);
-		settingButton.setFont(font);
+		JButton  settingButton = Button.createButton(constant.setting);
 		add(settingButton);
 		
-		JButton  exitButton = new JButton(constant.exit);
-		exitButton.setFont(font);
+		JButton  exitButton = Button.createButton(constant.exit);
 		add(exitButton);
+		
+		JPanel namePanel = new JPanel();	
+		JTextField text = EditText.createEditText("¹þ¹þ" , 15);
+		
+		JLabel nameLabel = Label.createButton(constant.name);
+		
+		namePanel.add(nameLabel);
+		namePanel.add(text);
+		add(namePanel,BorderLayout.CENTER);
 	}
 }

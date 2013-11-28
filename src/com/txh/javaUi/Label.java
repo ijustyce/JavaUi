@@ -2,10 +2,9 @@ package com.txh.javaUi;
 
 import java.awt.Font;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JLabel;
 
-public class Button extends JFrame{
+public class Label {
 	
 	/**
 	 * 
@@ -13,9 +12,9 @@ public class Button extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private static Font font = new Font("Default",Font.PLAIN,21);
 
-	public static JButton createButton(String value){
+	public static JLabel createButton(String value){
 		
-		JButton b = new JButton(value);	
+		JLabel b = new JLabel(value);	
 		b.setFont(font);
 		return b;		
 	}
